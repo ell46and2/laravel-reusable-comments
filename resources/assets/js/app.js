@@ -1,4 +1,4 @@
-
+import user from './mixins/user';
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -16,6 +16,11 @@ window.Vue = require('vue');
  */
 
 Vue.component('comments', require('./components/comments/Comments.vue'));
+
+/*
+* Mixins 
+*/
+Vue.mixin(user);
 
 const app = new Vue({
     el: '#app'

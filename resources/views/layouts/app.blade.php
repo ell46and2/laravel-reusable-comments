@@ -19,6 +19,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <script>
+        window.user = {
+            authenticated: {{ auth()->check() ? 'true' : 'false' }}
+        }
+    </script>
 </head>
 <body>
     <div id="app">
