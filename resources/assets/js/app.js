@@ -1,4 +1,5 @@
 import user from './mixins/user';
+import pluralize from './mixins/pluralize';
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -21,6 +22,7 @@ Vue.component('comments', require('./components/comments/Comments.vue'));
 * Mixins 
 */
 Vue.mixin(user);
+Vue.mixin(pluralize);
 
 const app = new Vue({
     el: '#app'

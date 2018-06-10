@@ -1,8 +1,10 @@
 <template>
 	<form @submit.prevent="patch">
 		<div class="form-group">
+		{{ textareaHeight }}
 			<textarea
 				id="body"
+				:rows="textareaHeight"
 				class="form-control"
 				autofocus="autofocus"
 				v-model="form.body"
@@ -28,6 +30,14 @@
 				form: {
 					body: this.comment.body
 				}
+			}
+		},
+		computed: {
+			textareaHeight() {
+				// get the number of lines of copy and divide by two so we can set
+				// the textarea to half the height of the copy.
+				// If less than 6, set to a default of 6.
+				return Math.max(Math.floor(this.comment.body.split(/\r*\n/).length / 2), 6);
 			}
 		},
 		props: {
